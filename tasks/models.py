@@ -15,6 +15,6 @@ class Task(models.Model):
     deadline = models.DateTimeField(default=datetime.now)
     category = models.CharField(max_length=255, blank=True)
     priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='baja')
-    dueDate = models.DateField(null=True, blank=True)     
+    dueDate = models.DateField(blank=True, null=True)
 def __str__(self):
     return self.title
