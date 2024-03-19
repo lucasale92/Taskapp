@@ -93,13 +93,19 @@ WSGI_APPLICATION = 'django_api.wsgi.application'
 # }
  
 
-DATABASES = {
-    "default":
-    dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost',
-        conn_max_age=600
-    )                         
+DATABASES = {'default' : dj_database_url.config(
+    default='postgres://...',
+    conn_max_age=600,
+    conn_health_checks=True,
+)
 }
+# DATABASES = {
+#     "default":
+#     dj_database_url.config(
+#         default='postgresql://postgres:postgres@localhost',
+#         conn_max_age=600
+#     )                         
+# }
 
 
 # Password validation
